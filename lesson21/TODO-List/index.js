@@ -10,19 +10,26 @@ export const tasks = [
 
 
 const renderTasks = tasksList => {
+  
   const listElem = document.querySelector('.list');
-  const el = document.querySelector('.list__item_done');
-  el.remove();
+  const el = document.querySelector('.list__item', '.list__item_done');
+    el.remove();
+    const el1 = document.querySelector('.list__item_done');
+    el1.remove();
   const listItemsElem = tasksList.sort((a,b) => a.done - b.done)
-  .map(({text, done}) => { const listItemElem = document.createElement('li');
+  .map(({text, done}) => { 
+    const listItemElem = document.createElement('li');
     listItemElem.classList.add("list__item");
+   
     if(done){
       listItemElem.classList.add('list__item_done');
     }
+   
     const checkboxElem = document.createElement('input');
     checkboxElem.setAttribute('type', 'checkbox');
     checkboxElem.checked = done;
     checkboxElem.classList.add("list__item-checkbox" );
+  
     listItemElem.append(checkboxElem,text);
     return listItemElem;
   });
