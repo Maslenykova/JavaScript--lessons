@@ -12,7 +12,7 @@ export const tasks = [
 export const renderTasks = tasksList => {
   
   const listElem = document.querySelector('.list');
-  const el = document.querySelector('.list__item', '.list__item_done');
+  const el = document.querySelector('.list__item');
     el.remove();
     const el1 = document.querySelector('.list__item_done');
     el1.remove();
