@@ -1,5 +1,6 @@
 export function clearList(){
-     document.querySelector('.categories').innerHTML = '';
+    const element = document.querySelector('.categories');
+    element.innerHTML = ' ';
 }
 
 console.log(clearList());
