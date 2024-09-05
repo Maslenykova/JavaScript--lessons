@@ -4,8 +4,11 @@ export function finishForm(){
     inputElem.setAttribute('type', 'text');
     inputElem.setAttribute('name', 'login');
     const passwordElem = document.querySelector('input');
-    elem.prepend(inputElem);
     passwordElem.setAttribute('type', 'password');
+    if(elem){
+        elem.prepend(inputElem);
+    }
+    return elem;
 }
 
 console.log(finishForm());
