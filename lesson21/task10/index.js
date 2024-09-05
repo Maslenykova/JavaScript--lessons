@@ -4,10 +4,8 @@ export function finishForm(){
     inputElem.setAttribute('type', 'text');
     inputElem.setAttribute('name', 'login');
     const passwordElem = document.querySelector('input');
-    passwordElem.setAttribute('type', 'password');
-
     elem.prepend(inputElem);
-    return elem;
+    passwordElem.setAttribute('type', 'password');
 }
 
 console.log(finishForm());
