@@ -1,15 +1,13 @@
-window.addEventListener('load', function() {
-export function finishForm(){
-    const finishForm = document.querySelector('.login-form');
-    const inputElem = document.createElement('input');
-    inputElem.setAttribute('type', 'text');
-    inputElem.setAttribute('name', 'login');
+export function finishForm() {
+    const form = document.querySelector('.login-form');
+    const formElem = document.createElement('input');
+    formElem.setAttribute('type', 'text');
+    formElem.setAttribute('name', 'login');
     const passwordElem = document.querySelector('input');
     passwordElem.setAttribute('type', 'password');
-    finishForm.prepend(inputElem);
+    form.prepend(formElem);
+  
+    return form;
+  }
+  console.log(finishForm());
 
-    console.log(inputElem);
-    return finishForm;
-}
-console.log(finishForm());
-});
