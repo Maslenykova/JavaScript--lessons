@@ -9,7 +9,7 @@ export const tasks = [
 ];
 
 
-export const renderTasks = tasksList => {
+const renderTasks = tasksList => {
   
   const listElem = document.querySelector('.list');
   const el = document.querySelector('.list__item');

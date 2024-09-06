@@ -3,4 +3,3 @@ export function clearList(){
     element.innerHTML = ' ';
 }
 
-console.log(clearList());
