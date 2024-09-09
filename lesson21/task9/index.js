@@ -1,28 +1,24 @@
-export function finishList(){
+export function finishList() {
     const list = document.querySelector('.list');
-    const listItem = document.createElement('li');
-    listItem.textContent = 8 ;
-    list.append(listItem);
-    const listItem1 = document.createElement('li');
-    listItem1.textContent = 1 ;
-    list.prepend(listItem1);
+    const li1 = document.createElement('li');
+    li1.textContent = '1';
+    const li4 = document.createElement('li');
+    li4.textContent = '4';
+    const li6 = document.createElement('li');
+    li6.textContent = '6';
+    const li8 = document.createElement('li');
+    li8.textContent = '8';
+
+    list.prepend(li1);
+
+    const listItemSpecial = document.querySelector('.special');
+    listItemSpecial.before(li4);
+    listItemSpecial.after(li6);
+  
+    list.append(li8);
     
-    const listItem5 = document.querySelector('.special');
-    const listItem2 = document.createElement('li');
-    listItem2.textContent = '4' ;
-    list.appendChild(listItem2)
-//    list.insertBefore(listItem2, listItem5);
-    listItem2.before(listItem5);  
-   
+  }
 
-    const listItem3 = document.createElement('li');
-    listItem3.textContent = 6 ;
-    list.appendChild(listItem3);
-    // list.insertAfter(listItem5,listItem3);
-    listItem3.after(listItem5);
 
-   
 
-}
-
-console.log(finishList());
+finishList();
