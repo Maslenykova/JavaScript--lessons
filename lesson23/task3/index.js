@@ -24,6 +24,7 @@ const renderTasks = tasksList => {
       checkbox.classList.add('list__item-checkbox');
       checkbox.dataset.index = index; 
 
+      
       if (done) {
         listItemElem.classList.add('list__item_done');
       }

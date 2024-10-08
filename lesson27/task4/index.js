@@ -1,27 +1,26 @@
 import { renderEvents } from "./events";
+import { storage } from "./storage.js";
 
 const saveEventsToLocalStorage = () => {
-    const events = JSON.stringify(storage.events); // Преобразуем события в строку
-    localStorage.setItem('calendarEvents', events); // Сохраняем в localStorage
+    const events = JSON.stringify(storage.events); 
   };
   
-  // Функция для загрузки событий из localStorage
+
   const loadEventsFromLocalStorage = () => {
-    const savedEvents = localStorage.getItem('calendarEvents'); // Получаем строку с событиями
+    const savedEvents = localStorage.getItem('calendarEvents'); 
     if (savedEvents) {
-      storage.events = JSON.parse(savedEvents); // Если события есть, преобразуем их обратно в массив
+      storage.events = JSON.parse(savedEvents); 
     }
   };
   
-  // Пример использования сохранения и загрузки
   window.addEventListener('load', () => {
-    loadEventsFromLocalStorage(); // Загружаем события при загрузке страницы
-    renderEvents(); // Отображаем события
+    loadEventsFromLocalStorage(); 
+    renderEvents(); 
   });
   
-  // Пример добавления события
+ 
   const addEvent = (event) => {
-    storage.events.push(event); // Добавляем новое событие в массив
-    saveEventsToLocalStorage(); // Сохраняем обновленный массив событий
-    renderEvents(); // Перерисовываем события на странице
+    storage.events.push(event); 
+    saveEventsToLocalStorage(); 
+    renderEvents(); 
   };

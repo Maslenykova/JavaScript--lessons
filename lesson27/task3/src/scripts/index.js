@@ -7,7 +7,7 @@ initTodoListHandlers();
 });
 
 const onStorageChange = event => {
-  if(event.key === 'taskList'){
+  if(event.key === 'tasksList'){
     renderTasks();
   }
 };

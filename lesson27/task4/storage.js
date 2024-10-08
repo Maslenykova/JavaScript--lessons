@@ -1,12 +1,15 @@
-import { updateEventColors } from "./color";
+import { updateEventColors} from "./color";
+import { renderEvents } from "./events";
+import { loadEventsFromLocalStorage } from "./index.js";
 
+export const storage = [];
 window.addEventListener('storage', (event) => {
     if (event.key === 'calendarEvents') {
-      loadEventsFromLocalStorage(); // Загружаем события, если они изменились
-      renderEvents(); // Перерисовываем события
+      loadEventsFromLocalStorage(); 
+      renderEvents(); 
     }
   
     if (event.key === 'eventColor') {
-      updateEventColors(); // Обновляем цвет событий, если он изменился
+      updateEventColors(); 
     }
   });
