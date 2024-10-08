@@ -5,8 +5,8 @@ const listElem = document.querySelector(".list");
 const createCheckbox = ({ done, id }) => {
   const checkboxElem = document.createElement("input");
   checkboxElem.setAttribute("type", "checkbox");
+  checkboxElem.setAttribute("data-id", id);
   checkboxElem.checked = done;
-  checkboxElem.dataset.id = id;
   checkboxElem.classList.add("list__item-checkbox");
   return checkboxElem;
 };
@@ -22,19 +22,13 @@ const createListItem = ({ text, done, id }) => {
   if (done) {
     listItemElem.classList.add("list__item_done");
   }
-
-  const textNode = document.createTextNode(text);
-  listItemElem.append(checkboxElem, textNode);
-
+  listItemElem.append(checkboxElem, text);
   return listItemElem;
 };
 
 export const renderTasks = () => {
   const tasksList = getItem("tasksList") || [];
   listElem.innerHTML = "";
-
   const tasksElems = tasksList.sort(compareTasks).map(createListItem);
-
   listElem.append(...tasksElems);
-  
 };
