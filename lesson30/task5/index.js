@@ -1,4 +1,4 @@
-import { addImage } from './addImage.test.js';
+import { addImage } from './addImage.js';
 
 export const addImageV2 = url => {
     return new Promise((resolve, reject) => {
