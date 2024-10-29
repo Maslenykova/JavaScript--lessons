@@ -4,7 +4,7 @@ import { createTasks, getTasksList } from "./tasksGateway.js";
 
 export const onCreateTask = () => {
   const taskTitleInputElement = document.querySelector(".task-input");
-  const text = taskTitleInputElement.value;
+  const text = taskTitleInputElement.value.trim();
   if (!text) {
     return;
   }
