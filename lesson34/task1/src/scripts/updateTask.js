@@ -16,10 +16,8 @@ export const onDeleteTask = (event) => {
 export const onToggleTask = (event) => {
   const isCheckbox = event.target.classList.contains('list-item__checkbox');
   const isDeleteBtn = event.target.classList.contains('list-item__delete-btn');
-  const isDoneItem = event.target.classList.contains('list-item_done');
 
-
-  if(isDeleteBtn || isDoneItem){
+  if (isDeleteBtn) {
     onDeleteTask(event);
     return;
   }
@@ -37,8 +35,8 @@ export const onToggleTask = (event) => {
     text,
     createData,
     done,
-    finishDate: done ? new Date().toDateString() : null,
-};
+    finishDate: done ? new Date().toISOString() : null,
+  };
 
   updateTask(taskId, updatedTask)
     .then(() => getTasksList())
@@ -47,5 +45,3 @@ export const onToggleTask = (event) => {
       renderTasks();
     });
 };
-
-
