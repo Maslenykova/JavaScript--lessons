@@ -14,19 +14,20 @@ renderUserData(defaultUser);
 const showUserBtnElrm = document.querySelector('.name-form__btn');
 const userNameInputElem = document.querySelector('.name-form__input');
 
-const onSearchUser = async () => {
+const onSearchUser = () => {
     showSpinner();
     cleanRepos();
     const userName = userNameInputElem.value;
-    try {
-        const userData = await fetchUserData(userName);
-        renderUserData(userData);
-        const reposList = await fetchRepositiries(userData.repos_url);
-        renderRepos(reposList);
-    }catch(err) {
-        alert(err.message); 
-  }finally{
+fetchUserData(userName).then(userData => {
+    renderUserData(userData);
+    return userData.repos_url;
+}).then(url => fetchRepositiries(url))
+.then(reposList => {
+    renderRepos(reposList);
+}).catch(err => {
+    alert(err.message);
+}).finally(()=>{
     hideSpinner();
-  }
-}
+});
+};
 showUserBtnElrm.addEventListener('click', onSearchUser);
